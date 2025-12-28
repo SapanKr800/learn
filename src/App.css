@@ -1,0 +1,26 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.items-container {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.item {
+  padding: 1rem;
+  border: 1px solid #ccc;
+  margin-bottom: 0.5rem;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+
+.loading {
+  text-align: center;
+  padding: 1rem;
+  font-weight: bold;
+}
