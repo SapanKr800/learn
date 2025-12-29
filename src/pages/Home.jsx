@@ -6,8 +6,9 @@ const Home = () => {
   const [data, setData] = useState([]);
   const fetchNews = async () => {
 
-    const newItem = await axios('https://newsapi.org/v2/everything?q=bitcoin&apiKey=a3f73a84a50947a19f2d055f7219bb58');
-    setData(newItem.data.articles);
+    const newItem = await axios('https://newsdata.io/api/1/latest?apikey=pub_66288bc7c934341df0aef9883819485767c45');
+    setData(newItem.data.results)
+    console.log(newItem.data.results)
   }
 
   useEffect(() => {
@@ -19,24 +20,24 @@ const Home = () => {
   return (
     <>
 
-<div className='grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-5'>
+      <div className='grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-5'>
 
-      {
-        data.map((details, i) => {
-          return (
-            <NewsCard details={details} key={i} />
-          )
-        })
-      }
+        {
+          data.map((details, i) => {
+            return (
+              <NewsCard details={details} key={i} />
+            )
+          })
+        }
 
-</div>
+      </div>
 
     </>
   )
 }
 
 
-const NewsCard = ({details}) => {
+const NewsCard = ({ details }) => {
   return (
 
     <>
